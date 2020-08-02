@@ -23,11 +23,12 @@
             htmlString += file.name + '<br>';
             const child_response = await fetch(file.url);
             const child_data = await child_response.json();
-            htmlString += '<span></span><span></span><span></span><span></span>'+'<ul>'
+            htmlString += '<ul>'
             for (let child of child_data) {
-              htmlString += '<span></span><span></span><span></span><span></span>'+`<li><a href="${child.download_url}">${child.name}</a></li>`;
+              const size = child.size > 1000000 ? (child.size/1000000).toFixed(2) + ' MB' : (child.size/1000).toFixed(2) + ' KB';
+              htmlString += `<li><a href="${child.download_url}">${child.name}</a>`+` <span justify='center'>${size}</span></li>`;
             }
-            htmlString += '<span></span><span></span><span></span><span></span>'+'</ul>'
+            htmlString += '</ul>'
           }
           htmlString += `</li>`
         }
