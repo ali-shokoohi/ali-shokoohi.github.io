@@ -6,35 +6,34 @@
   </head>
   <body>
     <h2>
-        Hi sweetie. This is index of contents. select them:
+        Hi sweetie. This is index of contents. Select them:
     </h2>
     <hr />
     <div id='root'></div>
     <script>
-      (async () => {
-        const response = await fetch('https://api.github.com/repos/ali-shokoohi/ali-shokoohi.github.io/contents/storage/');
+      const baseUrl = 'https://api.github.com/repos/ali-shokoohi/ali-shokoohi.github.io/contents/storage/';
+      const fillString = async (url, htmlString='') => {
+        htmlString += '<ul>';
+        const response = await fetch(url);
         const data = await response.json();
-        let htmlString = '<ul>';
         for (let file of data) {
           htmlString += `<li>`
           if (file.download_url){
-          htmlString += `<a href="${file.download_url}">${file.name}</a>`;
+            const size = file.size > 1000000 ? (file.size/1000000).toFixed(2) + ' MB' : (file.size/1000).toFixed(2) + ' KB';
+            htmlString += `<a href="${file.download_url}">${file.name}</a>`+` <span justify='center'>${size}</span>`;
           }else{
-            htmlString += file.name + '<br>';
-            const child_response = await fetch(file.url);
-            const child_data = await child_response.json();
-            htmlString += '<ul>'
-            for (let child of child_data) {
-              const size = child.size > 1000000 ? (child.size/1000000).toFixed(2) + ' MB' : (child.size/1000).toFixed(2) + ' KB';
-              htmlString += `<li><a href="${child.download_url}">${child.name}</a>`+` <span justify='center'>${size}</span></li>`;
-            }
-            htmlString += '</ul>'
+            htmlString += file.name;
+            htmlString = await fillString(url=file.url, htmlString=htmlString);
           }
           htmlString += `</li>`
+          console.log(htmlString);
         }
         htmlString += '</ul>';
-        document.getElementById('root').innerHTML = htmlString;
-      })()
+        return htmlString;
+      };
+      fillString(url=baseUrl).then(result =>
+        document.getElementById('root').innerHTML = result
+      );
     </script>
   <body>
 </html>
