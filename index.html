@@ -8,17 +8,31 @@
     <h2>
         Hi sweetie. This is index of contents. select them:
     </h2>
-    <br />
+    <hr />
+    <div id='root'></div>
     <script>
       (async () => {
         const response = await fetch('https://api.github.com/repos/ali-shokoohi/ali-shokoohi.github.io/contents/storage/');
         const data = await response.json();
         let htmlString = '<ul>';
         for (let file of data) {
-          htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
+          htmlString += `<li>`
+          if (file.download_url){
+          htmlString += `<a href="${file.download_url}">${file.name}</a>`;
+          }else{
+            htmlString += file.name + '<br>';
+            const child_response = await fetch(file.url);
+            const child_data = await child_response.json();
+            htmlString += '<span></span><span></span><span></span><span></span>'+'<ul>'
+            for (let child of child_data) {
+              htmlString += '<span></span><span></span><span></span><span></span>'+`<li><a href="${child.download_url}">${child.name}</a></li>`;
+            }
+            htmlString += '<span></span><span></span><span></span><span></span>'+'</ul>'
+          }
+          htmlString += `</li>`
         }
         htmlString += '</ul>';
-        document.getElementsByTagName('body')[0].innerHTML = htmlString;
+        document.getElementById('root').innerHTML = htmlString;
       })()
     </script>
   <body>
