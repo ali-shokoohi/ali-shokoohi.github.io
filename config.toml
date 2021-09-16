@@ -8,6 +8,10 @@ theme = "coder"
     languageName = "English"
     languageCode = "en-us"
     title = "Ali Shokoohi Website"
+  [languages.en.params]
+    author = "Ali Shokoohi"
+    info = "Back-End Developer"
+    description = "Ali Shokoohi's personal website"
 
   [languages.fa]
     languageName = "فارسی"
@@ -15,3 +19,25 @@ theme = "coder"
     languagedirection = "rtl"
     rtl = true
     title = "وبسایت علی شکوهی"
+  [languages.fa.params]
+    author = "علی شکوهی"
+    info = "توسعه دهنده ی وب"
+    description = "وب سایت شخصی علی شکوهی"
+
+[params]
+keywords = "blog,developer,personal"
+
+avatarurl = '/img/avatar.jpg'
+favicon_32 = "/img/favicon-32x32.ico"
+favicon_16 = "/img/favicon-16x16.ico"
+
+hideFooter = false
+hideCredits = false
+hideCopyright = false
+since = 2021
+
+enableTwemoji = true
+
+colorScheme = "auto"
+hidecolorschemetoggle = false
+
