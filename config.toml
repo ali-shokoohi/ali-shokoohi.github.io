@@ -8,3 +8,9 @@ defaultContentLanguage = 'en"
     languageCode = "en-us"
     title = "Ali Shokoohi Website"
 
+  [languages.fa]
+    languageName = ":fa:"
+    languageCode = "ir-fa"
+    languagedirection = "rtl"
+    rtl = true
+    title = "وبسایت علی شکوهی"
