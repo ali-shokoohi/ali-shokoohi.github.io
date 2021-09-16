@@ -12,6 +12,13 @@ theme = "coder"
     author = "Ali Shokoohi"
     info = "Back-End Developer"
     description = "Ali Shokoohi's personal website"
+    footercontent = "Publish is allowed only as free"
+  [languages.en.taxonomies]
+    category = "categories"
+    series = "series"
+    tag = "tags"
+    author = "authors"
+
 
   [languages.fa]
     languageName = "فارسی"
@@ -23,6 +30,12 @@ theme = "coder"
     author = "علی شکوهی"
     info = "توسعه دهنده ی وب"
     description = "وب سایت شخصی علی شکوهی"
+    footercontent = "انتشار فقط به صورت رایگان مجاز است"
+  [languages.fa.taxonomies]
+    category = "دسته بندی ها"
+    series = "سری ها"
+    tag = "تگ ها"
+    author = "نویسنده ها"
 
 [params]
 keywords = "blog,developer,personal"
