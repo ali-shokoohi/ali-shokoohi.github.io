@@ -1,6 +1,7 @@
 baseURL = 'https://shokoohi.cf/'
 
-defaultContentLanguage = 'en"
+defaultContentLanguage = "en"
+theme = "coder"
 
 [languages]
   [languages.en]
@@ -9,7 +10,7 @@ defaultContentLanguage = 'en"
     title = "Ali Shokoohi Website"
 
   [languages.fa]
-    languageName = ":fa:"
+    languageName = "فارسی"
     languageCode = "ir-fa"
     languagedirection = "rtl"
     rtl = true
