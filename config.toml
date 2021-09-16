@@ -1,0 +1,10 @@
+baseURL = 'https://shokoohi.cf/'
+
+defaultContentLanguage = 'en"
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    title = "Ali Shokoohi Website"
+
