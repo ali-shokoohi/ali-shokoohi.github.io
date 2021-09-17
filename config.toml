@@ -18,6 +18,10 @@ theme = "coder"
     series = "series"
     tag = "tags"
     author = "authors"
+  [[languages.en.menu.main]]
+    name = "About"
+    weight = 1
+    url = "about/"
 
 
   [languages.fa]
@@ -36,6 +40,10 @@ theme = "coder"
     series = "سری ها"
     tag = "تگ ها"
     author = "نویسنده ها"
+  [[languages.fa.menu.main]]
+    name = "درباره"
+    weight = 1
+    url = "about/"
 
 [params]
 keywords = "blog,developer,personal"
