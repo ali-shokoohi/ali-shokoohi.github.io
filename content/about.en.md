@@ -1,7 +1,7 @@
 ---
 title: "About me"
 date: 2021-09-17T13:48:16+04:30
-draft: true
+draft: false
 ---
 
 ![Shokoohi's formal avatar](/img/about/shokoohi-formal.jpg)

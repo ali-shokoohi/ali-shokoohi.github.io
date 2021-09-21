@@ -1,7 +1,7 @@
 ---
 title: "درباره‌ی من"
 date: 2021-09-16T20:18:56+04:30
-draft: true
+draft: false
 ---
 
 ![Shokoohi's formal avatar](/img/about/shokoohi-formal.jpg)
