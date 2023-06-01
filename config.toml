@@ -1,4 +1,4 @@
-baseURL = 'https://shokoohi.me/'
+baseURL = 'https://ali-shokoohi.github.io/'
 
 defaultContentLanguage = "en"
 theme = "coder"
